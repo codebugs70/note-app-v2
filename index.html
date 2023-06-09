@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FONT AWESOME LINK -->
+    <script
+      src="https://kit.fontawesome.com/5f219ec053.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- LINK FILE CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>TESTING</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box">
+        <span class="add-note">
+          <i class="fa-solid fa-plus"></i>
+        </span>
+        <h1>add new note</h1>
+      </div>
+      <!-- <div class="note">
+        <h1>This is a title</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+          accusantium nobis natus ratione culpa tempora, corrupti quaerat
+          mollitia doloribus distinctio aliquam velit reiciendis assumenda ullam
+          quam sint molestiae dicta quibusdam.
+        </p>
+        <div class="bottom">
+          <span>9/6/2023</span>
+          <div class="settings">
+            <i class="fa-solid fa-ellipsis"></i>
+            <div class="toggle">
+              <span class="group">
+                <i class="fa fa-edit icon-edit"></i>
+                <span>Edit</span>
+              </span>
+              <span class="group">
+                <i class="fa fa-trash icon-delete"></i>
+                <span>Delete</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+    <div class="modal">
+      <div class="overlay"></div>
+      <div class="modal-container">
+        <div class="modal-close">X</div>
+        <div class="modal-content">
+          <div class="row">
+            <label for="title">Title</label>
+            <input id="title" type="text" placeholder="Enter your title..." />
+          </div>
+          <div class="row">
+            <label for="description">description</label>
+            <textarea
+              id="description"
+              placeholder="Enter your description"
+            ></textarea>
+          </div>
+          <button class="add-new-note">add new note</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>

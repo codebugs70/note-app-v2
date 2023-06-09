@@ -1,0 +1,26 @@
+/* Color theme */
+$darkDime: #15202b;
+$darkNight: #13131a;
+$darkRedux: #1b1b1d;
+$dark27: #272729;
+$darkSaga: #2f2f2f;
+
+$colorSaga: #86d46b;
+$colorLightPurple: #ba8fff;
+$colorDarkPurple: #593d88;
+$colorLightGray: #dadde1;
+$colorPurple: #7856ff;
+$colorPink: #f91880;
+$colorBlue: #1d9bf0;
+$colorYellow: #ffd400;
+$colorOrange: #ff7a00;
+$colorGreen: #00ba7c;
+
+/* Mixins */
+
+@mixin hover-effect {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}

@@ -1,0 +1,215 @@
+// sass ./sass/style.scss ./css/style.css --watch
+@import "variables";
+@import "reset";
+
+@mixin note {
+  width: 100%;
+  height: 360px;
+  background-color: $darkRedux;
+  padding: 20px;
+  border-radius: 8px;
+  gap: 10px;
+}
+
+body {
+  background-color: $darkNight;
+  color: $colorLightGray;
+  padding: 20px;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  .box {
+    width: 100%;
+    height: 360px;
+    background-color: $darkRedux;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    gap: 20px;
+    span {
+      width: 130px;
+      height: 130px;
+      border: 2px dashed $colorLightGray;
+      display: flex;
+      border-radius: 100rem;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      cursor: pointer;
+      &:hover {
+        border-color: $colorPink;
+        color: $colorPink;
+      }
+    }
+    h1 {
+      text-transform: capitalize;
+      font-size: 18px;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+  }
+  .note {
+    @include note();
+    h1 {
+      text-transform: capitalize;
+      font-size: 18px;
+      color: $colorPink;
+      font-weight: 600;
+    }
+    p {
+      margin-top: 10px;
+      overflow: hidden;
+      max-height: 250px;
+      height: 100%;
+      font-size: 14px;
+    }
+    .bottom {
+      border-top: 1px solid $colorLightGray;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 15px;
+      .settings {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100rem;
+        cursor: pointer;
+        background-color: $darkSaga;
+        transition: all 0.2s linear;
+        &:hover {
+          background-color: $colorPink;
+        }
+        &.show .toggle {
+          transform: scale(1);
+        }
+        .toggle {
+          gap: 10px;
+          position: absolute;
+          top: -5px;
+          right: -82px;
+          background-color: $dark27;
+          transform: scale(0);
+          transform-origin: top left;
+          transition: all 0.1s linear;
+          border-radius: 4px;
+          min-width: 120px;
+          .group {
+            * {
+              pointer-events: none;
+            }
+            padding: 10px;
+            height: 40px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            &:hover {
+              color: $colorPink;
+              @include hover-effect();
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  &-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: $darkRedux;
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 10;
+  }
+  &-close {
+    width: 40px;
+    cursor: pointer;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100rem;
+    margin-left: auto;
+    background-color: $dark27;
+    &:hover {
+      background-color: $colorPink;
+    }
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .row {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      label {
+        color: $colorPink;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+      input::placeholder {
+        color: $colorLightGray;
+      }
+      input {
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 8px;
+        outline: none;
+        color: $colorLightGray;
+        border: 1px solid transparent;
+        background-color: $darkSaga;
+        &:focus {
+          border: 1px solid $colorPink;
+        }
+      }
+      textarea {
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 8px;
+        outline: none;
+        color: $colorLightGray;
+        border: 1px solid transparent;
+        height: 250px;
+        resize: none;
+        background-color: $darkSaga;
+        &:focus {
+          border: 1px solid $colorPink;
+        }
+      }
+    }
+    .add-new-note {
+      width: 100%;
+      background-color: $colorPink;
+      padding: 15px 0;
+      border-radius: 8px;
+      display: flex;
+      text-transform: capitalize;
+      font-weight: 600;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
